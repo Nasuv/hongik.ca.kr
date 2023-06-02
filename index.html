@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍익대학교</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="realhomepage.html">
+            <img class="image" src="pchome.jpeg" alt="Image A">
+        </a>
+    </div>
+
+    <script>
+        // 페이지가 로드될 때 현재 화면 크기를 확인하고 이미지를 변경합니다.
+        function handleScreenSize() {
+            var imageElement = document.querySelector('.image');
+            var screenWidth = window.innerWidth;
+
+            if (screenWidth <= 600) {
+                imageElement.src = "mobilehome.png";
+            } else {
+                imageElement.src = "pchome.jpeg";
+            }
+        }
+
+        handleScreenSize(); // 페이지가 로드될 때 초기 사진 설정
+
+        window.addEventListener('resize', handleScreenSize); // 화면 크기가 변경될 때마다 사진 변경
+    </script>
+    
+</body>
+</html>
